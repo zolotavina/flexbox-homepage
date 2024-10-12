@@ -6,6 +6,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'BaltimoreRegularItalic';
+    src: url('fonts/baltimore-regular-italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 .lexend-exa-body-regular {
     font-family: "Lexend Exa", sans-serif;
     font-optical-sizing: auto;
@@ -28,11 +35,13 @@
 }
 
 :root {
-    --sage: #CFDFC4;
+    /* --sage: #CFDFC4; */
+    --sage: #E7EFE2;
     --azalea: #CA2286;
     --ivory: #FAFAF8;
     --evergreen: #27391D;
     --strawberry: #E5B8CC;
+    --dark-charcoal: #333;
     --primary-color: var(--sage);
     --secondary-color: var(--azalea);
     --neutral-color: var(--ivory);
@@ -42,7 +51,20 @@
 
 body {
     background-color: var(--neutral-color);
-    color: #333;
+    color: var(--dark-charcoal);
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'AltaRegular', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+    line-height: 1.3;
+    font-weight: 300;
+}
+
+p {
+    line-height: 1.5;
 }
 
 a {
@@ -50,12 +72,15 @@ a {
     color: inherit;
 }
 
-/* Navbar */
+.cursive {
+    font-family: 'BaltimoreRegularItalic', sans-serif;
+}
+
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
     padding: 20px 30px;
     height: 120px;
 }
@@ -124,4 +149,150 @@ a {
         gap: 40px;
         font-size: 0.875rem;
     }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    height: calc(100vh - 120px);
+    color: var(--ivory);
+}
+
+.hero-text {
+    width: 90%;
+}
+
+.hero-cursive {
+    display: none;
+}
+
+.hero-text h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.hero-text p:nth-of-type(2) {
+    display: none;
+}
+
+.button-hero {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    padding: 12px;
+    width: 240px;
+    height: 50px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-hero:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(35%);
+    z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        height: calc(100vh - 134px);
+    }
+
+
+    .hero-text {
+        width: 80%;
+    }
+
+    .hero-cursive {
+        display: block;
+        transform: rotate(-2deg);
+        margin-bottom: 50px;
+        font-size: 1.125rem;
+    }
+
+    .hero-text h2 {
+        font-size: 2.875rem;
+        margin: 0 auto 10px;
+        min-width: 300px;
+        max-width: 600px;
+    }
+
+    .hero-text p:nth-of-type(2) {
+        display: block;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 0.875rem;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        border-top: 2px solid var(--neutral-color);
+        padding-top: 6px;
+        width: max-content;
+    }
+
+    .button-hero {
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        height: calc(100vh - 144px);
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        color: var(--dark-charcoal);
+        background-color: var(--primary-color);
+    }
+
+    .hero-text {
+        width: 60%;
+        padding: 20px 40px;
+        margin: 0 auto;
+    }
+
+    .hero-text p:nth-of-type(2) {
+        border-top: 2px solid var(--dark-charcoal);
+    }
+
+    .hero-image {
+        position: static;
+        width: 40%;
+        background-image: url(./images/hero.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        filter: brightness(80%);
+        z-index: 1;
+    }
+
+    .button-hero {
+        border: 2px solid var(--accent-color);
+    }
+
+    .button-hero:hover {
+        background-color: var(--accent-color);
+        color: var(--neutral-color);
+    }
+
+
 }
