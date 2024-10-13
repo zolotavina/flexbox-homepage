@@ -52,12 +52,11 @@
 body {
     background-color: var(--neutral-color);
     color: var(--dark-charcoal);
-    letter-spacing: 2px;
 }
 
 h2 {
     font-family: 'AltaRegular', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     letter-spacing: 6px;
     line-height: 1.3;
     font-weight: 300;
@@ -74,6 +73,7 @@ a {
 
 .cursive {
     font-family: 'BaltimoreRegularItalic', sans-serif;
+    transform: rotate(-2deg);
 }
 
 /* NAVBAR */
@@ -90,6 +90,7 @@ a {
     font-size: 1.75rem;
     letter-spacing: 14px;
     max-width: min-content;
+    color: var(--accent-color);
 }
 
 .hamburger {
@@ -98,6 +99,7 @@ a {
 
 .nav-links {
     display: none;
+    letter-spacing: 2px;
 }
 
 .nav-links a {
@@ -174,7 +176,6 @@ a {
 
 .hero-text h2 {
     margin-bottom: 40px;
-    font-size: 2.5rem;
 }
 
 .hero-text p:nth-of-type(2) {
@@ -187,11 +188,12 @@ a {
     font-weight: 300;
     border: 2px solid var(--primary-color);
     border-radius: 25px;
-    padding: 12px;
+    padding: 13px;
     width: 240px;
     height: 50px;
     margin: 0 auto;
     transition: all 0.3s ease-in-out;
+    letter-spacing: 2px;
 }
 
 .button-hero:hover {
@@ -205,7 +207,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(./images/hero.png);
+    background-image: url(./images/hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -225,7 +227,6 @@ a {
 
     .hero-cursive {
         display: block;
-        transform: rotate(-2deg);
         margin-bottom: 50px;
         font-size: 1.125rem;
     }
@@ -247,6 +248,7 @@ a {
         border-top: 2px solid var(--neutral-color);
         padding-top: 6px;
         width: max-content;
+        letter-spacing: 2px;
     }
 
     .button-hero {
@@ -277,7 +279,7 @@ a {
     .hero-image {
         position: static;
         width: 40%;
-        background-image: url(./images/hero.png);
+        background-image: url(./images/hero.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -293,6 +295,102 @@ a {
         background-color: var(--accent-color);
         color: var(--neutral-color);
     }
-
-
 }
+
+/* OUR STORY SECTION */
+.about-us {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 40px auto;
+    width: 80%;
+}
+
+.story-image {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 40px;
+}
+
+.story-image-cursive {
+    position: absolute;
+    bottom: -6px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.story-text h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.story-text p:nth-of-type(1) {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.story-text-cursive {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .about-us {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .story-image {
+        margin-bottom: 0;
+        width: 40%;
+    }
+
+    .story-image img {
+        margin-top: 0;
+    }
+
+    .story-image-cursive{
+        display: none;
+    }
+
+    .story-text {
+        width: 60%;
+    }
+
+    .story-text h2 {
+        text-align: left;
+    }
+    
+    .story-text-cursive {
+        display: block;
+        padding: 40px 0;
+        font-size: 1.125rem;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .about-us {
+        width: 80%;
+        max-width: 900px;
+        gap: 60px;
+        margin: 60px auto;
+        font-size: 1.125rem;
+    }
+}
+
+
+
+
+
+
+
